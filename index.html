@@ -21,6 +21,49 @@
         #chatbotButton:hover {
             background-color: #0056b3;
         }
+
+        #chatbotIframe {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            height: 600px;
+            border: none;
+            z-index: 1000;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) { /* For tablets */
+            #chatbotButton {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            #chatbotIframe {
+                width: 300px;
+                height: 500px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) { /* For phones */
+            #chatbotButton {
+                bottom: 10px;
+                right: 10px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            #chatbotIframe {
+                width: 250px;
+                height: 400px;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -34,13 +77,6 @@
                 chatbotIframe = document.createElement('iframe');
                 chatbotIframe.id = 'chatbotIframe';
                 chatbotIframe.src = 'http://13.201.78.220:5000/';
-                chatbotIframe.style.position = 'fixed';
-                chatbotIframe.style.bottom = '20px';
-                chatbotIframe.style.right = '20px';
-                chatbotIframe.style.width = '400px';
-                chatbotIframe.style.height = '600px';
-                chatbotIframe.style.border = 'none';
-                chatbotIframe.style.zIndex = '1000';
                 document.body.appendChild(chatbotIframe);
             } else {
                 chatbotIframe.style.display = chatbotIframe.style.display === 'none' ? 'block' : 'none';
